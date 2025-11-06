@@ -1,6 +1,7 @@
 import HeroSection from "@/components/home/heroSection";
 import DemoSection from "@/components/home/demoSection";
 import HowItWorksSection from "@/components/home/howItWorksSection";
+import PricingSection from "@/components/home/pricingSection";
 
 export default function Home() {
   return (
@@ -44,6 +45,9 @@ export default function Home() {
         </div>
         <div className="animate-in fade-in slide-in-from-bottom-12 duration-1200 delay-600">
           <HowItWorksSection />
+        </div>
+        <div className="animate-in fade-in slide-in-from-bottom-12 duration-1200 delay-600">
+          <PricingSection />
         </div>
       </main>
     </>
