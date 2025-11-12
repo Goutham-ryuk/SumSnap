@@ -5,6 +5,7 @@ import { FileText } from "lucide-react";
 import UploadFormInput from "./uploadFormInput";
 import { z } from "zod";
 import { useUploadThing } from "@/utils/uploadthing";
+import { generatePDFSummary } from "@/actions/upload-actions";
 
 const fileSchema = z.object({
   file: z
@@ -35,6 +36,9 @@ export default function UploadForm() {
       if (!res?.[0]?.ufsUrl) {
         throw new Error("No URL returned from UploadThing");
       }
+      const PDFSummary = await generatePDFSummary(res);
+
+      console.log(PDFSummary, "summary");
     } catch (error) {
       if (error instanceof z.ZodError) {
         setError(error.message);
